@@ -29,7 +29,7 @@ const Projects = () => {
       id: 3,
       title: 'Dashboard Analytics',
       description: 'Dashboard interaktif dengan chart dan visualisasi data real-time',
-      image: '/public/image/p3.png',
+      image: '/image/p3.png',
       category: 'web',
       technologies: ['React', 'Chart.js', 'API Integration'],
       demoLink: '#',

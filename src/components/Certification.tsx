@@ -9,7 +9,7 @@ const Certification = () => {
       issuer: 'Tech Academy',
       date: '2023',
       description: 'Advanced React.js development with hooks, state management, and modern practices',
-      image: '/public/image/c1.png',
+      image: '/image/c1.png',
       credentialUrl: '#'
     },
     {
@@ -18,7 +18,7 @@ const Certification = () => {
       issuer: 'Coding Institute',
       date: '2023',
       description: 'Comprehensive frontend development covering HTML5, CSS3, JavaScript, and responsive design',
-      image: '/public/image/c2.png',
+      image: '/image/c2.png',
       credentialUrl: '#'
     },
     /*{

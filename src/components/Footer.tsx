@@ -12,9 +12,10 @@ const Footer = () => {
             <div className="mb-8">
               <h3 className="text-3xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-black via-gray-600 to-white bg-clip-text text-transparent">
-                  See u again!
+                  NOTE!
                 </span>
               </h3>
+              <p>"Cut the waffle and crack on with learning, yeah?"</p>
             </div>
 
             <div className="border-t border-white/20 pt-8">

@@ -7,6 +7,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const fullText = 'Avan Ibrahim, S.Kom';
+  
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

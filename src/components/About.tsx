@@ -31,35 +31,56 @@ const About = () => {
       )
     },
     {
-      name: 'Python',
+      name: 'Vite',
       logo: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
-          <path fill="#3776ab" d="M12.1,0C9.8,0,8.1,1.6,8.1,3.5v1.9h4v0.6H5.8C3.6,6,2,7.6,2,9.5v5c0,1.9,1.6,3.5,3.8,3.5h1.1v-1.4c0-2.1,1.8-3.8,4-3.8h4c1.9,0,3.5-1.6,3.5-3.5V3.5C18.4,1.6,16.3,0,12.1,0z M10.6,2.4c0.7,0,1.3,0.6,1.3,1.3s-0.6,1.3-1.3,1.3s-1.3-0.6-1.3-1.3S9.9,2.4,10.6,2.4z"/>
-          <path fill="#ffd43b" d="M12.1,24c2.3,0,3.9-1.6,3.9-3.5v-1.9h-4v-0.6h6.3c2.2,0,3.8-1.6,3.8-3.5v-5c0-1.9-1.6-3.5-3.8-3.5h-1.1v1.4c0,2.1-1.8,3.8-4,3.8h-4c-1.9,0-3.5,1.6-3.5,3.5v6.8C5.7,22.4,7.8,24,12.1,24z M13.6,21.6c-0.7,0-1.3-0.6-1.3-1.3s0.6-1.3,1.3-1.3s1.3,0.6,1.3,1.3S14.3,21.6,13.6,21.6z"/>
-        </svg>
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png" 
+          alt="Vite Logo" 
+          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
+        />
       )
-    }
+    },
+    {
+      name: 'Vue.js',
+      logo: (
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png" 
+          alt="Vue Logo" 
+          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
+        />
+      )
+    },
+    {
+      name: 'Figma',
+      logo: (
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" 
+          alt="Figma Logo" 
+          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
+        />
+      )
+    },
   ];
 
   const education = [
     {
       id: 1,
       name: 'Universitas Ichsan Gorontalo Utara',
-      level: 'Sarjana',
+      level: '',
       logo: '/image/logounisangorut.png',
       period: '2020 - 2024'
     },
     {
       id: 2,
       name: 'SMAN Muhamadiyah Kota Gorontalo',
-      level: 'SMA',
+      level: '',
       logo: '/image/sma.png',
       period: '2017 - 2020'
     },
     {
       id: 3,
       name: 'SMPN 2 Kota Gorontalo',
-      level: 'SMP',
+      level: '',
       logo: '/image/smp.png',
       period: '2014 - 2017'
     }
@@ -134,7 +155,15 @@ const About = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="flex items-center space-x-2 cursor-pointer hover:translate-x-2 transition-transform duration-300">
                   <span className="text-gray-300">•</span>
-                  <span className="text-white/80 dark:text-gray-200 text-sm">Cyber Security</span>
+                  <span className="text-white/80 dark:text-gray-200 text-sm">Penetration Testing</span>
+                </div>
+                <div className="flex items-center space-x-2 cursor-pointer hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-gray-300">•</span>
+                  <span className="text-white/80 dark:text-gray-200 text-sm">SOC Analyst</span>
+                </div>
+                <div className="flex items-center space-x-2 cursor-pointer hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-gray-300">•</span>
+                  <span className="text-white/80 dark:text-gray-200 text-sm">DFIR</span>
                 </div>
                 <div className="flex items-center space-x-2 cursor-pointer hover:translate-x-2 transition-transform duration-300">
                   <span className="text-gray-300">•</span>
@@ -170,7 +199,7 @@ const About = () => {
                   }}
                 >
                   <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white/20 flex items-center justify-center flex-shrink-0 cursor-pointer hover:rotate-12 transition-transform duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 cursor-pointer hover:rotate-12 transition-transform duration-300">
                       <img
                         src={edu.logo}
                         alt={edu.name}

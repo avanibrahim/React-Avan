@@ -87,7 +87,7 @@ const Contact = () => {
       icon: '📍',
       label: 'Location',
       value: 'Gorontalo, Indonesia',
-      link: '#'
+      link: './pages/NotFound'
     }
   ];
 
@@ -99,7 +99,7 @@ const Contact = () => {
         </svg>
       ),
       label: 'LinkedIn',
-      link: 'https://linkedin.com/in/404notfound',
+      link: './pages/NotFound',
       color: 'hover:text-gray-300'
     },
     {

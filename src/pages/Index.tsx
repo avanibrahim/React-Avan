@@ -8,6 +8,7 @@ import Projects from '../components/Projects';
 import Certification from '../components/Certification';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import NotFound from './NotFound';
 
 const Index = () => {
   return (

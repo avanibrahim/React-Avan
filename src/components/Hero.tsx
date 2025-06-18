@@ -111,7 +111,7 @@ const Hero = () => {
                 boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1)'
               }}>
                 <img
-                  src="/lovable-uploads/0c486859-ba19-4c94-86c8-c7e5df74f2df.png"
+                  src="/image/profile.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                   style={{

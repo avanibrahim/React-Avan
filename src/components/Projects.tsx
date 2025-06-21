@@ -38,14 +38,14 @@ const Projects = () => {
     /*{
       id: 4,
       title: 'Mobile App UI',
-      description: 'Design UI/UX untuk aplikasi mobile dengan user experience yang optimal',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
-      category: 'design',
+      description: 'Rooms Invasion',
+      image: '/image/p4.png',
+      category: 'web',
       technologies: ['Figma', 'UI/UX', 'Prototype'],
       demoLink: '#',
       githubLink: '#'
     },
-    {
+    /*{
       id: 5,
       title: 'Weather App',
       description: 'Aplikasi cuaca real-time dengan design minimalis dan data akurat',

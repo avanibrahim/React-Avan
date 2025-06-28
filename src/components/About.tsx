@@ -15,11 +15,13 @@ const About = () => {
       )
     },
     {
-      name: 'Tailwind CSS',
+      name: 'Next JS',
       logo: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
-          <path fill="#06B6D4" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
-        </svg>
+        <img 
+        src="https://img.icons8.com/fluent-systems-filled/200/FFFFFF/nextjs.png" 
+        alt="Next Logo" 
+        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
+      />
       )
     },
     {
@@ -31,11 +33,11 @@ const About = () => {
       )
     },
     {
-      name: 'Vite',
+      name: 'Python',
       logo: (
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png" 
-          alt="Vite Logo" 
+          src="https://images.icon-icons.com/1508/PNG/512/python_104451.png" 
+          alt="Python Logo" 
           className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
         />
       )

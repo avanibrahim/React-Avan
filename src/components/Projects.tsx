@@ -68,7 +68,7 @@ const Projects = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'Semua Karya', icon: '■' },
+    { id: 'all', label: 'All Projects', icon: '■' },
     { id: 'web', label: 'Web Development', icon: '▲' },
     { id: 'design', label: 'Mobile App', icon: '●' }
   ];

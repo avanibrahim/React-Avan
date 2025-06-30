@@ -25,7 +25,7 @@ const Projects = () => {
       demoLink: '#',
       githubLink: '#'
     },
-    {
+    /*{
       id: 3,
       title: 'Dashboard Analytics',
       description: 'Dashboard interaktif dengan chart dan visualisasi data real-time',
@@ -114,16 +114,16 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredProjects.map((project, index) => (
             <div
-              key={project.id}
-              className="glass-card overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
+            key={project.id}
+            className="glass-card overflow-hidden rounded-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+          >
+          
               <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-40 sm:h-68 object-cover transition-transform duration-300 hover:scale-210"
-                />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+              />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>

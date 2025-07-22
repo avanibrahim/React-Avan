@@ -17,15 +17,15 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Disney Character Editor',
-      description: 'Tool editing foto karakter Disney dengan filter dan effects yang memukau',
+      title: 'Blank',
+      description: 'Blank',
       image: '/image/p2.png',
       category: 'design',
       technologies: ['Photoshop', 'AI Tools', 'Creative Design'],
       demoLink: '#',
       githubLink: '#'
     },
-    /*{
+    {
       id: 3,
       title: 'Dashboard Analytics',
       description: 'Dashboard interaktif dengan chart dan visualisasi data real-time',

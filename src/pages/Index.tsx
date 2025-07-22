@@ -14,6 +14,7 @@ const Index = () => {
   return (
     <ThemeProvider>
       <div className="min-h-screen relative overflow-hidden">
+        
         {/* Animated gradient background */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">

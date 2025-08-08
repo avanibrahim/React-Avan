@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { useToast } from '../hooks/use-toast';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -72,24 +74,25 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: '✉',
+      icon: <Mail className="w-5 h-5" />,
       label: 'Email',
       value: 'avanibrahim375@gmail.com',
       link: 'mailto:avanibrahim375@gmail.com'
     },
     {
-      icon: '📞',
-      label: 'WhatsApp',
+      icon: <Phone className="w-5 h-5" />,
+      label: 'Telephone',
       value: '+62 Just Click',
       link: 'https://wa.me/6282291325909'
     },
     {
-      icon: '📍',
+      icon: <MapPin className="w-5 h-5" />,
       label: 'Location',
       value: 'Gorontalo, Indonesia',
       link: '/notfound'
     }
   ];
+  
 
   const socialLinks = [
     {
@@ -116,140 +119,83 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-black via-gray-600 to-white bg-clip-text text-transparent">
-              Connect with Me
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="text-right mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 w-full">
+          <span className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block font-sans font-extralight tracking-wider uppercase">
+              contact -
             </span>
           </h2>
-          <p className="text-xl text-white/80 dark:text-gray-200 max-w-3xl mx-auto">
-          Got an interesting project? Or want to discuss technology?
-          contact me!
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="glass-card p-8">
-            <h3 className="text-2xl font-bold mb-6 text-white dark:text-white">
-              ▸ Send a Message
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white/80 dark:text-gray-200 mb-2">
-                Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 glass-input text-white placeholder-white/50 transition-all duration-200"
-                  placeholder="Enter your name..."
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white/80 dark:text-gray-200 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 glass-input text-white placeholder-white/50 transition-all duration-200"
-                  placeholder="name@mail.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white/80 dark:text-gray-200 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 glass-input text-white placeholder-white/50 transition-all duration-200 resize-none"
-                  placeholder="Tell me about your project or idea..."
-                />
-              </div>
-              
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-gradient-to-r from-black to-gray-700 text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+    {/* Grid 2 kolom, bagian atas */}
+    <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+      {/* Kanan: Contact Info */}
+      <div className="flex flex-col gap-8 justify-between h-full">
+        <div className="glass-card p-8 h-full">
+          <h3 className="text-2xl font-bold mb-6 text-white dark:text-white">
+            Contact Info
+          </h3>
+          <div className="space-y-4">
+            {contactInfo.map((info, index) => (
+              <a
+                key={index}
+                href={info.link}
+                className="flex items-center space-x-4 p-4 rounded-lg glass-effect hover:bg-white/10 transition-colors duration-200"
               >
-                {isSubmitting ? '⟳ Mengirim...' : '→ Submit'}
-              </button>
-            </form>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold mb-6 text-white dark:text-white">
-                ◼ Contact Info
-              </h3>
-              
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="flex items-center space-x-4 p-4 rounded-lg glass-effect hover:bg-white/10 transition-colors duration-200"
-                  >
-                    <span className="text-2xl text-gray-300">{info.icon}</span>
-                    <div>
-                      <p className="font-medium text-white dark:text-white">{info.label}</p>
-                      <p className="text-white/80 dark:text-gray-200">{info.value}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold mb-6 text-white dark:text-white">
-                ● Social Media
-              </h3>
-              
-              <div className="grid grid-cols-1 gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center space-x-4 p-4 rounded-lg glass-effect hover:bg-white/10 transition-all duration-200 text-white/80 ${social.color} group`}
-                  >
-                    <div className="text-gray-300 group-hover:scale-110 transition-transform duration-200">
-                      {social.icon}
-                    </div>
-                    <span className="font-medium">{social.label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="glass-card bg-gradient-to-r from-gray-700/30 to-gray-500/30 p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">▲ Let's Discuss!</h3>
-              <p className="text-white/90 leading-relaxed">
-              I am always open to new projects, creative collaborations, or simply discussing the latest technology. 
-              Let’s bring your amazing ideas to life together!
-              </p>
-            </div>
+                <span className="text-2xl text-gray-300">{info.icon}</span>
+                <div>
+                  <p className="font-medium text-white dark:text-white">{info.label}</p>
+                  <p className="text-white/80 dark:text-gray-200">{info.value}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+       {/* Kiri: Need Help */}
+      <div className="glass-card p-8 rounded-2xl flex flex-col justify-between h-full">
+        <h3 className="text-2xl font-bold text-white mb-3">Need Help?</h3>
+        <details className="mb-2 bg-white/10 rounded-lg p-3">
+          <summary className="cursor-pointer font-semibold text-white">What services do you offer?</summary>
+          <p className="text-white/80 mt-2">Web development, design, automation, etc.</p>
+        </details>
+        <details className="mb-2 bg-white/10 rounded-lg p-3">
+          <summary className="cursor-pointer font-semibold text-white">How can I contact you quickly?</summary>
+          <p className="text-white/80 mt-2">Just click the WhatsApp button below!</p>
+        </details>
+        <button
+          className="mt-6 relative group border-none bg-transparent p-0 outline-none cursor-pointer font-mono font-light uppercase text-base w-full flex justify-center"
+          onClick={() =>
+            window.open('https://wa.me/6282291325909?text=Halo%20saya%20mau%20tanya%20tentang%20portfolio%20Anda', '_blank')
+          }
+          type="button"
+        >
+          <span className="absolute top-0 left-0 w-56 h-auto bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px" />
+          <span className="absolute top-0 left-0 w-56 h-auto rounded-lg bg-gradient-to-l from-[hsl(217,33%,6%)] via-[hsl(217,33%,3%)] to-[hsl(217,33%,6%)]" />
+          <div className="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#000] via-[#b0b0b0] to-[#b0b0b0] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110">
+            <span className="select-none">Contact via WhatsApp</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 ml-2 -mr-1 transition duration-250 group-hover:translate-x-1">
+              <path clipRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" fillRule="evenodd" />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    {/* Bawah sendiri: Let's Discuss! horizontal card */}
+    <div className="mt-12">
+      <div className="glass-card bg-gradient-to-r from-gray-700/30 to-gray-500/30 p-8 text-white rounded-2xl w-full">
+        <h3 className="text-2xl font-bold mb-4">▲ Let's Discuss!</h3>
+        <p className="text-white/90 leading-relaxed">
+          I am always open to new projects, creative collaborations, or simply discussing the latest technology. 
+          Let’s bring your amazing ideas to life together!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
   );
 };
 

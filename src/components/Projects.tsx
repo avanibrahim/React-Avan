@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -9,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: 'E-Commerce Modern',
       description: 'Platform e-commerce dengan React.js dan design responsif yang elegan',
-      image: '/image/p1.png',
+      image: '/image/p1.webp',
       category: 'web',
       technologies: ['React', 'CSS3', 'JavaScript'],
       demoLink: '#',
@@ -19,7 +21,7 @@ const Projects = () => {
       id: 2,
       title: 'Blank',
       description: 'Blank',
-      image: '/image/p2.png',
+      image: '/image/p2.webp',
       category: 'design',
       technologies: ['Photoshop', 'AI Tools', 'Creative Design'],
       demoLink: '#',
@@ -29,7 +31,7 @@ const Projects = () => {
       id: 3,
       title: 'Dashboard Analytics',
       description: 'Dashboard interaktif dengan chart dan visualisasi data real-time',
-      image: '/image/p3.png',
+      image: '/image/p3.webp',
       category: 'web',
       technologies: ['React', 'Chart.js', 'API Integration'],
       demoLink: '#',
@@ -39,7 +41,7 @@ const Projects = () => {
       id: 4,
       title: 'Mobile App UI',
       description: 'Rooms Invasion',
-      image: '/image/p4.png',
+      image: '/image/p4.webp',
       category: 'web',
       technologies: ['Figma', 'UI/UX', 'Prototype'],
       demoLink: '#',
@@ -80,15 +82,12 @@ const Projects = () => {
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-black via-gray-600 to-white bg-clip-text text-transparent">
-              Project
+       <div className="text-right mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 w-full">
+          <span className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block font-sans font-extralight tracking-wider uppercase">
+              projects -
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-white/80 dark:text-gray-200 max-w-3xl mx-auto px-2">
-          The works I have created include Web development and Mobile app design.
-          </p>
         </div>
 
         {/* Filter Buttons */}
@@ -119,11 +118,15 @@ const Projects = () => {
           >
           
               <div className="relative overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-              />
+              <LazyLoadImage
+  src={project.image}
+  alt={project.title}
+  effect="blur"
+  placeholderSrc="/image/placeholder.png" // Placeholder kecil (super ringan)
+  beforeLoad={() => <div className="animate-pulse bg-gray-200 w-full h-60 rounded-xl" />}
+  className="w-full h-auto object-cover rounded-xl shadow"
+/>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>

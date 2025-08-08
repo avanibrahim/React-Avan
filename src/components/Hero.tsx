@@ -64,40 +64,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-      {/* Simplified Floating Glass Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Large Subtle Glass Element */}
-        <div 
-          className="absolute top-1/4 left-1/4 w-24 sm:w-32 md:w-48 h-24 sm:h-32 md:h-48 opacity-10"
-          style={{ 
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
-            backdropFilter: 'blur(20px)',
-            borderRadius: '50%',
-            border: '1px solid rgba(255,255,255,0.1)',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-            animation: 'floatGlow 8s ease-in-out infinite',
-          }}
-        />
-        
-        {/* Medium Glass Circle */}
-        <div 
-          className="absolute bottom-1/3 right-1/4 w-18 sm:w-24 md:w-36 h-18 sm:h-24 md:h-36 opacity-12"
-          style={{ 
-            background: 'radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 70%)',
-            backdropFilter: 'blur(15px)',
-            borderRadius: '50%',
-            border: '1px solid rgba(255,255,255,0.08)',
-            animation: 'floatGlow 10s ease-in-out infinite',
-            animationDelay: '3s'
-          }}
-        />
-      </div>
-
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Profile Image with increased mobile size */}
-          <div className="relative mx-auto w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 mb-6 sm:mb-8 md:mb-12">
+          <div className="relative mx-auto w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 mb-24 sm:mb-8 md:mb-12">
             {/* Square Glass Border with adjusted padding for better fit */}
             <div className="absolute inset-0 glass-effect" style={{
               background: 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%)',
@@ -111,8 +82,9 @@ const Hero = () => {
                 boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1)'
               }}>
                 <img
-                  src="/image/profile.png"
+                  src="/profile.png"
                   alt="Profile"
+                  draggable="false"
                   className="w-full h-full object-cover"
                   style={{
                     borderRadius: '13px',
@@ -155,7 +127,22 @@ const Hero = () => {
                   }}
                 >
                   {displayedText}
-                  <span className="animate-pulse ml-1 text-gray-600">|</span>
+                  <span
+                    className="ml-1 text-gray-100"
+                    style={{
+                      animation: 'blink 1s steps(1, start) infinite'
+                    }}
+                  >
+                    |
+                  </span>
+                  <style>
+                  {`
+                  @keyframes blink {
+                    0%, 49% { opacity: 1 }
+                    50%, 100% { opacity: 0 }
+                  }
+                  `}
+                  </style>
                 </span>
               </h1>
             </div>

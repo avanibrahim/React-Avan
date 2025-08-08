@@ -108,43 +108,56 @@ const About = () => {
   return (
     <section ref={sectionRef} id="about" className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
-            <span className="bg-gradient-to-r from-black via-gray-600 to-white bg-clip-text text-transparent">
-              About Me
+        <div className="mb-10 sm:mb-16 text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            <span className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block font-sans font-extralight tracking-wider uppercase">
+              - About Me
             </span>
-          </h2>
-          <p className="text-lg sm:text-xl text-white/80 dark:text-gray-200 max-w-3xl mx-auto px-2 animate-fade-in">
-          Only junior technology and creativity developers
-          </p>
-        </div>
+
+            </h2>
+          </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Description - Left Side */}
           <div className="space-y-6">
-            <div 
-              className="glass-card p-6 sm:p-8 cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white dark:text-white"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
                 transition: 'all 0.8s ease-out'
               }}
             >
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white dark:text-white">
-                → Introduction
+                Introduction
               </h3>
-              <p className="text-white/80 dark:text-gray-200 leading-relaxed mb-4 text-sm sm:text-base">
-              I am a web developer skilled in React.js and Next.js, building fast and responsive web applications. Currently, 
-              I am expanding my knowledge in IoT and app development to create more integrated and versatile digital solutions. 
-              I enjoy learning new technologies and applying them to deliver effective and user-friendly products.
-              </p>
-              <p className="text-white/80 dark:text-gray-200 leading-relaxed text-sm sm:text-base">
-              I combine strong skills in web development with a good understanding of business marketing. 
-              I’m creative in generating new ideas and skilled at attracting customers to help grow the business. 
-              My goal is to build products that are both innovative and valuable.
-              </p>
-            </div>
+              <div 
+                className="glass-card p-6 sm:p-8 cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+                  transition: 'all 0.8s ease-out'
+                }}
+              >
+                <p className="text-justify text-white/80 dark:text-gray-200 text-sm sm:text-base leading-1 sm:leading-[1.9] mb-2">
+                  I am a web developer skilled in React.js and Next.js, building fast and responsive web applications. Currently, 
+                  I am expanding my knowledge in IoT and app development to create more integrated and versatile digital solutions. 
+                  I enjoy learning new technologies and applying them to deliver effective and user-friendly products.
+                </p>
+                <p className="text-justify text-white/80 dark:text-gray-200 text-sm sm:text-base leading-1 sm:leading-[1.9]">
+                  I combine strong skills in web development with a good understanding of business marketing. 
+                  I’m creative in generating new ideas and skilled at attracting customers to help grow the business. 
+                  My goal is to build products that are both innovative and valuable.
+                </p>
+              </div>
 
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white dark:text-white"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+                transition: 'all 0.8s ease-out'
+              }}
+            >
+                Learning
+              </h3>
             <div 
               className="glass-card p-4 sm:p-6 cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-xl"
               style={{
@@ -153,8 +166,7 @@ const About = () => {
                 transition: 'all 0.8s ease-out 0.2s'
               }}
             >
-              <h4 className="text-base sm:text-lg font-semibold mb-3 text-white dark:text-white">▸ Learning</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-1">
                 <div className="flex items-center space-x-2 cursor-pointer hover:translate-x-2 transition-transform duration-300">
                   <span className="text-gray-300">•</span>
                   <span className="text-white/80 dark:text-gray-200 text-sm">Penetration Testing</span>
@@ -187,7 +199,7 @@ const About = () => {
               }}
             >
               <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-white mb-6">
-                ◼ Education
+                Education
               </h3>
               
               {education.map((edu, index) => (
@@ -206,6 +218,7 @@ const About = () => {
                         src={edu.logo}
                         alt={edu.name}
                         className="w-full h-full object-cover"
+                        draggable="false"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -230,7 +243,7 @@ const About = () => {
               }}
             >
               <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-white mb-6">
-                ◼ Skills
+                Skills
               </h3>
               
               <div className="glass-card p-4 sm:p-6 cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-xl">

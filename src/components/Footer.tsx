@@ -11,11 +11,13 @@ const Footer = () => {
           <div className="text-center">
             <div className="mb-8">
               <h3 className="text-3xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-black via-gray-600 to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block">
                   NOTE!
                 </span>
               </h3>
-              <p>"Cut the waffle and crack on with learning, yeah?"</p>
+              <p className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block">
+                "Cut the waffle and crack on with learning, yeah?"
+              </p>
             </div>
 
             <div className="border-t border-white/20 pt-8">
@@ -24,14 +26,7 @@ const Footer = () => {
                   © {currentYear} AIBR - All rights reserved.
                 </p>
                 
-                <div className="flex space-x-6">
-                  <a 
-                    href="/notfound" 
-                    className="text-white/70 hover:text-gray-400 transition-colors duration-200"
-                  >
-                    |
-                  </a>
-                </div>
+               
               </div>
             </div>
           </div>

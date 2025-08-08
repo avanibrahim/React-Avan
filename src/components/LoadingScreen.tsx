@@ -1,30 +1,23 @@
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import Loader from "./Loader"; // Pastikan path benar
 
-export default function LoadingScreen() {
-  return (
-    <AnimatePresence>
-      <motion.div
-        key="loading"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative flex flex-col items-center justify-center h-screen w-full overflow-hidden"
-      >
-        {/* Shimmer effect background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-100 to-white animate-pulse" />
+const LoadingScreen = ({ isVisible }) => (
+  <div
+    className={`
+      fixed inset-0 z-[9999] flex flex-col items-center justify-center
+      bg-black transition-opacity duration-700
+      ${isVisible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+    `}
+    style={{ transition: "opacity 1.5s" }}
+  >
+    <img
+      src="/logo.png"
+      alt="AIBR Logo"
+      className="w-28 h-auto mb-8 animate-pulse drop-shadow-2xl"
+      draggable={false}
+    />
+    <Loader />
+  </div>
+);
 
-        {/* Logo + Text */}
-        <div className="z-10 text-center">
-          <img
-            src="/image/favicon.png"
-            alt="Logo"
-            className="h-20 w-20 mx-auto mb-4 animate-bounce"
-          />
-          <h1 className="text-xl font-semibold text-gray-800">Memuat Website...</h1>
-          <p className="text-sm text-gray-600 mt-1 italic">“Menuju layanan diagnosis yang lebih cerdas.”</p>
-        </div>
-      </motion.div>
-    </AnimatePresence>
-  );
-}
+export default LoadingScreen;

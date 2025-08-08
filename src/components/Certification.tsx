@@ -44,16 +44,13 @@ const Certification = () => {
   return (
     <section id="certification" className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-black via-gray-600 to-white bg-clip-text text-transparent">
-              Certificate
+      <div className="mb-10 sm:mb-16 text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            <span className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block font-sans font-extralight tracking-wider uppercase">
+              - certificate
             </span>
-          </h2>
-          <p className="text-lg sm:text-xl text-white/80 dark:text-gray-200 max-w-3xl mx-auto px-2">
-          Certifications and achievements that demonstrate a commitment to continuous learning.
-          </p>
-        </div>
+            </h2>
+          </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {certifications.map((cert, index) => (

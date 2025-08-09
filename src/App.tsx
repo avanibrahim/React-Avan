@@ -82,6 +82,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/notfound" element={<NotFound />} />
+              <Route path="*" element={<NotFound />} />
               {/* ADD CUSTOM ROUTES HERE */}
             </Routes>
           </BrowserRouter>

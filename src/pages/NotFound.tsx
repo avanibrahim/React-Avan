@@ -28,7 +28,7 @@ const NotFound = () => {
       <div className="text-center p-8">
         {/* Main 404 Text */}
         <div className="text-8xl md:text-9xl font-bold mb-8">
-          {text}<span className="animate-pulse">_</span>
+          {text}
         </div>
         
         {/* Error Message */}
@@ -37,7 +37,9 @@ const NotFound = () => {
         </div>
         
         <div className="text-sm mb-8 text-gray-500">
-          {location.pathname}
+          <p>
+            The page you are looking for does not exist or has been moved.
+          </p>
         </div>
 
         {/* Return Button */}

@@ -9,6 +9,27 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const Index = () => {
+
+  // di atas return()
+const blockImageOpenOnMobile = (e) => {
+  // jalankan hanya di viewport < md (mobile)
+  if (typeof window === "undefined" || window.innerWidth >= 768) return;
+
+  const el = e.target;
+  // cek apakah target gambar (atau di dalam picture)
+  const isImg =
+    el?.tagName === "IMG" ||
+    (el?.closest && el.closest("img, picture"));
+
+  if (!isImg) return;
+
+  // kalau gambar dibungkus <a> atau ada handler lain (lightbox)
+  // cegah navigasi & event bubbling
+  e.preventDefault();
+  e.stopPropagation();
+};
+
+
   return (
     <ThemeProvider>
       <div className="min-h-screen relative overflow-hidden">
@@ -43,25 +64,36 @@ const Index = () => {
 
         {/* Content */}
         <Navigation />
-        <div
-          className="
-          relative z-10
-          bg-white/5 dark:bg-black/5
-          text-black dark:text-white
-          transition-colors duration-300
-          font-sans font-extralight tracking-wide
-          
-          [&_*]:text-black
-          dark:[&_*]:text-white
-          "
-        >
-          <Hero />
-          <About />
-          <Projects />
-          <Certification />
-          <Contact />
-          <Footer />
-        </div>
+
+<div
+  onClickCapture={blockImageOpenOnMobile}
+  onContextMenuCapture={(e) => {
+    // cegah long-press context menu di mobile
+    if (typeof window !== "undefined" && window.innerWidth < 768) e.preventDefault();
+  }}
+  className="
+    relative z-10
+    bg-white/5 dark:bg-black/5
+    text-black dark:text-white
+    transition-colors duration-300
+    font-sans font-extralight tracking-wide
+    [&_*]:text-black dark:[&_*]:text-white
+
+    /* --- Disable interaksi IMG khusus mobile (< md) --- */
+    max-md:[&_img]:select-none
+    max-md:[&_img]:!cursor-default
+    max-md:[&_img]:[-webkit-user-drag:none]
+    max-md:[&_img]:[-webkit-touch-callout:none]
+  "
+>
+  <Hero />
+  <About />
+  <Projects />
+  <Certification />
+  <Contact />
+  <Footer />
+</div>
+
       </div>
     </ThemeProvider>
   );

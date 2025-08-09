@@ -180,7 +180,7 @@ const Contact = () => {
     <div className="mt-12">
       <div className="glass-card bg-gradient-to-r from-gray-700/30 to-gray-500/30 p-8 text-white rounded-2xl w-full">
         <h3 className="text-2xl font-bold mb-4">▲ Let's Discuss!</h3>
-        <p className="text-white/90 leading-relaxed">
+        <p className="text-white/90 leading-relaxed text-left">
           I am always open to new projects, creative collaborations, or simply discussing the latest technology. 
           Let’s bring your amazing ideas to life together!
         </p>

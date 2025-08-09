@@ -114,20 +114,19 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div
             key={project.id}
-            className="glass-card overflow-hidden rounded-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="glass-card overflow-hidden rounded-xl hover:shadow-2xl transform transition-all duration-300"
           >
           
               <div className="relative overflow-hidden">
               <LazyLoadImage
-  src={project.image}
-  alt={project.title}
-  effect="blur"
-  placeholderSrc="/image/placeholder.png" // Placeholder kecil (super ringan)
-  beforeLoad={() => <div className="animate-pulse bg-gray-200 w-full h-60 rounded-xl" />}
-  className="w-full h-auto object-cover rounded-xl shadow"
-/>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                src={project.image}
+                alt={project.title}
+                effect="blur"
+                placeholderSrc="/image/placeholder.png" // Placeholder kecil (super ringan)
+                beforeLoad={() => <div className="animate-pulse bg-gray-200 w-full h-60 rounded-xl" />}
+                className="w-full h-auto object-cover rounded-xl shadow"
+              />
+              
               </div>
             </div>
           ))}

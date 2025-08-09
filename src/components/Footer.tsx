@@ -15,18 +15,16 @@ const Footer = () => {
                   NOTE!
                 </span>
               </h3>
-              <p className="bg-gradient-to-r from-gray-200 via-gray-300 to-white bg-clip-text text-transparent w-full inline-block">
-                "Cut the waffle and crack on with learning, yeah?"
-              </p>
-            </div>
+              <p className="text-[0.8rem] sm:text-base md:text-[1rem] lg:text-xl bg-gradient-to-r from-gray-100 via-gray-200 to-white bg-clip-text text-transparent w-full inline-block">
+  "Cut the waffle and crack on with learning, yeah?"
+</p>
 
-            <div className="border-t border-white/20 pt-8">
+            </div>
+            <div className="border-t border-black dark:border-white/50 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p className="text-white/70 dark:text-gray-300">
                   © {currentYear} AIBR - All rights reserved.
                 </p>
-                
-               
               </div>
             </div>
           </div>

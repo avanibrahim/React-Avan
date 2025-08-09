@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useToast } from '../hooks/use-toast';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import WhatsAppPearlButton from './WhatsAppPearlButton';
 
 
 const Contact = () => {
@@ -162,24 +163,16 @@ const Contact = () => {
         </details>
         <details className="mb-2 bg-white/10 rounded-lg p-3">
           <summary className="cursor-pointer font-semibold text-white">How can I contact you quickly?</summary>
-          <p className="text-white/80 mt-2">Just click the WhatsApp button below!</p>
+          <p className="text-white/80 mt-2">Just press the button below!</p>
         </details>
-        <button
-          className="mt-6 relative group border-none bg-transparent p-0 outline-none cursor-pointer font-mono font-light uppercase text-base w-full flex justify-center"
-          onClick={() =>
-            window.open('https://wa.me/6282291325909?text=Halo%20saya%20mau%20tanya%20tentang%20portfolio%20Anda', '_blank')
-          }
-          type="button"
-        >
-          <span className="absolute top-0 left-0 w-56 h-auto bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px" />
-          <span className="absolute top-0 left-0 w-56 h-auto rounded-lg bg-gradient-to-l from-[hsl(217,33%,6%)] via-[hsl(217,33%,3%)] to-[hsl(217,33%,6%)]" />
-          <div className="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#000] via-[#b0b0b0] to-[#b0b0b0] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110">
-            <span className="select-none">Contact via WhatsApp</span>
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 ml-2 -mr-1 transition duration-250 group-hover:translate-x-1">
-              <path clipRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" fillRule="evenodd" />
-            </svg>
-          </div>
-        </button>
+        <div className="w-full flex items-center justify-center mt-4">
+          <WhatsAppPearlButton
+            phone="6282291325909"
+            message="Halo, saya mau tanya tentang portfolio Anda"
+            label="Press Me!"
+            fullWidth={false}
+          />
+        </div>
       </div>
     </div>
 

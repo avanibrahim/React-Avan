@@ -5,39 +5,20 @@ const Certification = () => {
   const certifications = [
     {
       id: 1,
-      title: 'React.js Developer Certification',
-      issuer: 'Tech Academy',
-      date: '2023',
-      description: 'Advanced React.js development with hooks, state management, and modern practices',
       image: '/image/c1.png',
-      credentialUrl: '#'
     },
     {
       id: 2,
-      title: 'Frontend Web Development',
-      issuer: 'Coding Institute',
-      date: '2023',
-      description: 'Comprehensive frontend development covering HTML5, CSS3, JavaScript, and responsive design',
       image: '/image/c2.png',
-      credentialUrl: '#'
-    },
-    /*{
-      id: 3,
-      title: 'UI/UX Design Professional',
-      issuer: 'Design Academy',
-      date: '2022',
-      description: 'User interface and user experience design principles, prototyping, and user research',
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=2638&h=2034&fit=crop',
-      credentialUrl: '#'
     },
     {
+      id: 3,
+      image: '/image/c3.png',
+    },
+    /*{
       id: 4,
-      title: 'JavaScript Advanced Programming',
-      issuer: 'Web Development Institute',
-      date: '2022',
-      description: 'Advanced JavaScript concepts, ES6+, async programming, and modern frameworks',
-      image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1080&h=1350&fit=crop',
-      credentialUrl: '#'
+      
+         image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1080&h=1350&fit=crop',
     },*/
   ];
 
@@ -52,24 +33,28 @@ const Certification = () => {
             </h2>
           </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {certifications.map((cert, index) => (
-            <div
-              key={cert.id}
-              className="glass-card overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            {certifications.map((cert, index) => (
+              <div
+                key={cert.id}
+                className="glass-card w-[360px] sm:w-[360px] overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+               <div
+                  className="relative overflow-hidden rounded-lg group"
+                  style={{ aspectRatio: '4 / 3' }}   // ganti ke '1 / 1' (square) atau '16 / 9' jika perlu
+                >
+                  <img
+                    src={cert.image}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+
       </div>
     </section>
   );

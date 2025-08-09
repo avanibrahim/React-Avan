@@ -138,7 +138,7 @@ const About = () => {
                 }}
               >
                 <p className="text-justify text-white/80 dark:text-gray-200 text-sm sm:text-base leading-1 sm:leading-[1.9] mb-2">
-                  I am a web developer skilled in React.js and Next.js, building fast and responsive web applications. Currently, 
+                  I am a web developer skilled in React and Next.js, building fast and responsive web applications. Currently, 
                   I am expanding my knowledge in IoT and app development to create more integrated and versatile digital solutions. 
                   I enjoy learning new technologies and applying them to deliver effective and user-friendly products.
                 </p>

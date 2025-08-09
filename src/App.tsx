@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import LoadingScreen from "./components/LoadingScreen"; // <-- pastikan file ini ada!
+import LoadingScreen from "./components/LoadingScreen"; 
 
 const queryClient = new QueryClient();
 

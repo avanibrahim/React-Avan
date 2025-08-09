@@ -68,6 +68,7 @@ const Navigation = () => {
         >
           <img
             src="/logo.png"
+            draggable={false}
             alt="AIBR Logo"
             className="w-16 h-auto object-contain dark:filter-none filter invert"
           />

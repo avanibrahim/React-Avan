@@ -67,6 +67,17 @@ const StyledWrapper = styled.div<{ $fullWidth?: boolean }>`
       0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
   }
 
+  /* Force label tetap terang di LIGHT, tanpa ganggu dark */
+    .button .wrap p {
+color: rgba(255, 255, 255, 0.95) !important; /* bright */
+ }
+html.dark & .button .wrap p {
+  color: rgba(255, 255, 255, 0.95) !important; /* kembali gelap saat dark */
+}
+  .button svg { color: rgba(255,255,255,0.95) !important; }
+html.dark & .button svg { color: rgba(255, 255, 255, 0.95) !important; }
+
+
   .button .wrap {
     display: flex;
     align-items: center;

@@ -8,7 +8,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "./components/LoadingScreen"; 
 import MaintenancePage from "./pages/MaintenancePage";
-import DelayedPromoModal from "./pages/DevelopModal";
+import ProjectDetail from "./pages/ProjectDetail";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 const queryClient = new QueryClient();
 
@@ -65,7 +67,7 @@ const App = () => {
 
     // <DelayedPromoModal delay={8000} repeatEvery={10000} />
     // Splash loading timeout
-    const timer = setTimeout(() => setIsLoading(false), 2700);
+    const timer = setTimeout(() => setIsLoading(false), 2000);
 
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
@@ -82,14 +84,16 @@ const App = () => {
         <Sonner />
         <LoadingScreen isVisible={isLoading} />
         <div className={isLoading ? "pointer-events-none select-none" : ""}>
-          <BrowserRouter>
+        <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/maintenance" element={<MaintenancePage />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/notfound" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          </BrowserRouter>
+        </BrowserRouter>
         </div>
       </TooltipProvider>
     </QueryClientProvider>

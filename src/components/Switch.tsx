@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
 
   .label {
     height: 24px;
-    width: 48px;
+    width: 42px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: inset 0 0 3px 2px #fff,
@@ -49,8 +49,8 @@ const StyledWrapper = styled.div`
   .label::before {
     position: absolute;
     content: "";
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     background: linear-gradient(
       130deg,
@@ -58,14 +58,14 @@ const StyledWrapper = styled.div`
       #fff 11%,
       #726f6f 62%
     );
-    left: 4px;
-    top: 4px;
+    left: 6px;
+    top: 6px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.23), 4px 4px 6px rgba(0,0,0,0.23);
     transition: 0.3s;
   }
 
   #checkbox:checked ~ .label::before {
-    left: 28px;
+    left: 24px;
     background: linear-gradient(315deg, #000 0%, #414141 70%);
     transition: 0.3s;
   }

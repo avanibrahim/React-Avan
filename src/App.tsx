@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "./components/LoadingScreen"; 
+import MaintenancePage from "./pages/MaintenancePage";
+import DelayedPromoModal from "./pages/DevelopModal";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +62,8 @@ const App = () => {
     document.addEventListener("contextmenu", handleContextMenu);
     document.addEventListener("keydown", handleKeyDown);
 
+
+    // <DelayedPromoModal delay={8000} repeatEvery={10000} />
     // Splash loading timeout
     const timer = setTimeout(() => setIsLoading(false), 2700);
 
@@ -79,12 +83,12 @@ const App = () => {
         <LoadingScreen isVisible={isLoading} />
         <div className={isLoading ? "pointer-events-none select-none" : ""}>
           <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/notfound" element={<NotFound />} />
-              <Route path="*" element={<NotFound />} />
-              {/* ADD CUSTOM ROUTES HERE */}
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/maintenance" element={<MaintenancePage />} />
+            <Route path="/notfound" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
           </BrowserRouter>
         </div>
       </TooltipProvider>

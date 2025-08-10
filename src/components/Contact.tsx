@@ -166,12 +166,10 @@ const Contact = () => {
           <p className="text-white/80 mt-2">Just press the button below!</p>
         </details>
         <div className="w-full flex items-center justify-center mt-4">
-          <WhatsAppPearlButton
-            phone="6282291325909"
-            message="Halo, saya mau tanya tentang portfolio Anda"
-            label="Press Me!"
-            fullWidth={false}
-          />
+        <WhatsAppPearlButton
+          label="Press Me!"
+          fullWidth={false}
+        />
         </div>
       </div>
     </div>

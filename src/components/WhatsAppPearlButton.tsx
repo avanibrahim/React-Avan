@@ -1,45 +1,42 @@
-// WhatsAppPearlButton.tsx
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  phone?: string;      // tanpa tanda +
-  message?: string;    // pesan awal
-  label?: string;      // teks pada tombol
-  fullWidth?: boolean; // jika ingin width:100%
+  label?: string;
+  fullWidth?: boolean;
+  className?: string;
 };
 
 const WhatsAppPearlButton: React.FC<Props> = ({
-  phone = '6282291325909',
-  message = 'Halo saya mau tanya tentang portfolio Anda',
-  label = 'Contact via WhatsApp',
-  fullWidth = true,
+  label = "Consult Now!",
+  fullWidth = false,
+  className = "",
 }) => {
-  const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
+  const navigate = useNavigate();
   return (
     <StyledWrapper $fullWidth={fullWidth}>
       <button
-        className="button"
-        type="button"
-        aria-label={label}
-        onClick={() => window.open(waUrl, '_blank', 'noopener')}
-      >
-        <div className="wrap">
-          <p>
-            <span>✧</span>
-            <span>✦</span>
-            {label}
-          </p>
-          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-            />
-          </svg>
-        </div>
-      </button>
+      className="button"
+      type="button"
+      aria-label={label}
+      onClick={() => navigate("/maintenance")}
+    >
+      <div className="wrap">
+        <p>
+          <span>✧</span>
+          <span>✦</span>
+          {label}
+        </p>
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+          />
+        </svg>
+      </div>
+    </button>
     </StyledWrapper>
   );
 };

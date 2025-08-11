@@ -205,7 +205,7 @@ export default function ProjectDetail() {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
             >
-               <img src="/icons/ig.png" width="26" height="26" alt="Logo" />
+               <img src="/_optimized/icons/ig.webp" width="26" height="26" alt="Logo" />
             </a>
             </div>
         </div>

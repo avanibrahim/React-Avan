@@ -82,7 +82,7 @@ const Hero = () => {
                 boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.1)'
               }}>
                 <img
-                  src="/profile.png"
+                  src="/_optimized/profile.avif"
                   alt="Profile"
                   draggable="false"
                   className="w-full h-full object-cover"

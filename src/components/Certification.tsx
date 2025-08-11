@@ -5,15 +5,15 @@ const Certification = () => {
   const certifications = [
     {
       id: 1,
-      image: '/image/c1.png',
+      image: '/_optimized/image/c1.webp',
     },
     {
       id: 2,
-      image: '/image/c2.png',
+      image: '/_optimized/image/c2.webp',
     },
     {
       id: 3,
-      image: '/image/c3.png',
+      image: '/_optimized/image/c3.webp',
     },
     /*{
       id: 4,

@@ -73,7 +73,7 @@ const Navigation: React.FC = () => {
                 aria-label="Back to top"
               >
                 <img
-            src="/logo2.png"
+            src="/_optimized/logo2.webp"
             draggable={false}
             alt="AIBR Logo"
             className="ml-0 md:ml-6 mr-14 w-16 h-auto object-contain dark:filter-none filter invert"

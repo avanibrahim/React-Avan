@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'Project Web E-Commerce',
       description: 'Platform e-commerce dengan React.js dan design responsif user friendly.',
-      image: '/image/p1.webp',
+      image: '/_optimized/image/p1.avif',
       category: 'web',
       technologies: ['React', 'Tailwind', 'TypeScript'],
       demoLink: '#',
@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: "Project App Complaint",
       description: 'Blank',
-      image: '/image/p2.webp',
+      image: '/_optimized/image/p2.avif',
       category: 'design',
       technologies: ['Photoshop', 'AI Tools', 'Creative Design'],
       demoLink: '#',
@@ -63,7 +63,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: 'Project Web Based Diagnosis',
       description: 'Dashboard interaktif dengan chart dan visualisasi data real-time',
-      image: '/image/p3.webp',
+      image: '/_optimized/image/p3.avif',
       category: 'web',
       technologies: ['React', 'Chart.js', 'API Integration'],
       demoLink: '#',
@@ -145,20 +145,39 @@ const Projects: React.FC = () => {
                   if (isTouch) setTouchActiveId(project.id); // tap gambar -> munculkan View + blur
                 }}
               >
-                <LazyLoadImage
-                  src={project.image}
-                  alt={project.title}
-                  effect="blur"
-                  placeholderSrc="/logo.png"
-                  beforeLoad={() => (
-                    <div className="animate-pulse bg-gray-200 w-full h-60 rounded-xl" />
-                  )}
-                  className="
-                    w-full h-auto object-cover
-                    select-none
-                    transition-opacity duration-300 motion-reduce:transition-none
-                  "
-                />
+                <div className="relative img-wrap rounded-xl overflow-hidden h-90">
+                    {/* Skeleton shimmer */}
+                    <div className="skeleton absolute inset-0 rounded-xl overflow-hidden">
+                      <div className="h-full w-full bg-gray-900 dark:bg-slate-300" />
+                      <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_1.6s_linear_infinite]" />
+                    </div>
+
+                    <LazyLoadImage
+                      src={project.image}
+                      alt={project.title}
+                      effect="blur"
+                      onLoad={(e) => {
+                        const wrap = (e.target as HTMLImageElement).closest(".img-wrap");
+                        if (wrap) wrap.classList.add("loaded");
+                      }}
+                      onError={(e) => {
+                        const wrap = (e.target as HTMLImageElement).closest(".img-wrap");
+                        if (wrap) wrap.classList.add("loaded");
+                      }}
+                      className="
+                        w-full h-auto object-cover select-none
+                        opacity-0 transition-opacity duration-300 motion-reduce:transition-none
+                      "
+                    />
+                  </div>
+
+                  <style>
+                  {`
+                    @keyframes shimmer { 100% { transform: translateX(100%); } }
+                    .img-wrap.loaded .skeleton { opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+                    .img-wrap.loaded img { opacity: 1 !important; }
+                  `}
+                  </style>
 
                 {/* Overlay blur super smooth (tanpa zoom) */}
                 <div

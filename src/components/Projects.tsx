@@ -3,6 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from "react-router-dom";
 import { ExternalLink, Globe } from "lucide-react";
+import { ProjectImage } from './ProjectImage';
 
 
 
@@ -145,20 +146,7 @@ const Projects: React.FC = () => {
                   if (isTouch) setTouchActiveId(project.id); // tap gambar -> munculkan View + blur
                 }}
               >
-                <LazyLoadImage
-                  src={project.image}
-                  alt={project.title}
-                  effect="blur"
-                  placeholderSrc="/image/placeholder.png"
-                  beforeLoad={() => (
-                    <div className="animate-pulse bg-gray-200 w-full h-60 rounded-xl" />
-                  )}
-                  className="
-                    w-full h-auto object-cover
-                    select-none
-                    transition-opacity duration-300 motion-reduce:transition-none
-                  "
-                />
+                <ProjectImage project={{ image: project.image, title: project.title, aspectW: 10, aspectH: 9.5 }} />
 
                 {/* Overlay blur super smooth (tanpa zoom) */}
                 <div

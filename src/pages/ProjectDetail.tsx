@@ -55,18 +55,18 @@ export default function ProjectDetail() {
     <LoadingScreen isVisible={showLoader} />
 
     <section className="relative min-h-dvh overflow-hidden bg-gray-50 dark:bg-neutral-950">
-  {/* background/gradient kamu */}
-  <div className="absolute inset-0 -z-10 bg-gradient-to-b
+        {/* background/gradient kamu */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b
                   from-gray-300 via-gray-200/60 to-gray-50
                   dark:from-rose-900/40 dark:via-rose-800/20 dark:to-neutral-950" />
 
-  {/* ⬇️ penting: container supaya tidak melebar */}
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-        {/* Breadcrumb + Back */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-        <Link to="/#projects">
-  <BackButton />
-</Link>
+        {/* ⬇️ penting: container supaya tidak melebar */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
+                {/* Breadcrumb + Back */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                <Link to="/#projects">
+        <BackButton />
+        </Link>
 
           <nav className="text-sm">
             <ol className="flex items-center gap-2 text-black/70 dark:text-white/70">

@@ -65,7 +65,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-2 md:mt-20">
         <div className="text-center">
           {/* Profile Image with increased mobile size */}
           <div className="relative mx-auto w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 mb-24 sm:mb-8 md:mb-12">

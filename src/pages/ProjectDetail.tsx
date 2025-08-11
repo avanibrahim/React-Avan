@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingScreen from "../components/LoadingScreen"; 
 import { ExternalLink, Globe } from "lucide-react";
+import BackButton from "../components/ButtonBack";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -53,18 +54,19 @@ export default function ProjectDetail() {
     <>
     <LoadingScreen isVisible={showLoader} />
 
-    <section className="py-4 sm:py-8 lg:py-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-dvh overflow-hidden bg-gray-50 dark:bg-neutral-950">
+  {/* background/gradient kamu */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-b
+                  from-gray-300 via-gray-200/60 to-gray-50
+                  dark:from-rose-900/40 dark:via-rose-800/20 dark:to-neutral-950" />
+
+  {/* ⬇️ penting: container supaya tidak melebar */}
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         {/* Breadcrumb + Back */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-          <Link
-            to="/#projects"
-            onClick={goWithLoader("/#projects")} // ← intercept di sini
-            className="pb-4 inline-flex items-center gap-2 text-1xl md:text-2xl font-medium
-                       text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white transition hover:underline"
-          >
-            ← Back to Home
-          </Link>
+        <Link to="/#projects">
+  <BackButton />
+</Link>
 
           <nav className="text-sm">
             <ol className="flex items-center gap-2 text-black/70 dark:text-white/70">
@@ -105,14 +107,47 @@ export default function ProjectDetail() {
         <div className="lg:col-span-5 lg:col-start-8 lg:row-start-1">
         {/* Image dengan efek zoom-in saat hover */}
         <figure className="relative">
-            <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-auto object-cover"
-            />
+            <div className="relative z-10">
+                <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto object-cover"
+                />
+            </div>
             <figcaption className="sr-only">{project.title}</figcaption>
-            <div className="pointer-events-none absolute" />
-        </figure>
+
+            {/* Kucing Lottie via iFrame + mode light/dark */}
+            <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-[1.5rem] right-3 select-none z-0 cat-peek-5s"
+            >
+                {/* Badge supaya tetap kebaca di foto ramai */}
+                <span className="inline-flex items-center justify-center w-10 h-10">
+                <iframe
+                    src="https://lottie.host/embed/50374bdf-bb4c-4cc6-a691-9647c29ae5d4/GcAYA8TBxU.lottie"
+                    title="walking cat"
+                    className="w-8 h-8 border-0 bg-transparent overflow-hidden
+                            transition-[filter]
+                            dark:invert dark:brightness-120"
+                />
+                </span>
+            </span>
+
+            <style>{`
+                @keyframes cat-peek {
+                /* dari bawah (ngumpet di balik foto) */
+                0%, 100% { transform: translateY(2.4rem); }
+                /* naik ke posisi sekarang (muncul) */
+                40%, 60% { transform: translateY(0); }
+                }
+                .cat-peek-3s { animation: cat-peek 8s ease-in-out infinite; will-change: transform; }
+                .cat-peek-5s { animation: cat-peek 5s ease-in-out infinite; will-change: transform; }
+
+                @media (prefers-reduced-motion: reduce) {
+                .cat-peek-5s, .cat-peek-5s { animation: none; }
+                }
+            `}</style>
+            </figure>
 
         {/* Tech & Category (langsung di bawah image) */}
         <div className="mt-4 rounded-2xl p-5 border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/5">

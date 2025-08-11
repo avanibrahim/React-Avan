@@ -37,7 +37,7 @@ const blockImageOpenOnMobile = (e) => {
         {/* Animated gradient background (brighter in light mode) */}
             <div className="fixed inset-0 z-0 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-br
-                              from-black via-gray-100 to-black
+                              from-black via-gray-400 to-black
                               dark:from-black dark:via-black dark:to-black">
                 <div className="absolute inset-0 opacity-70 dark:opacity-25 transition-opacity">
                   {/* streak 1 */}

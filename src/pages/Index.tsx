@@ -8,6 +8,8 @@ import Certification from '../components/Certification';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import MaintenancePage from './MaintenancePage';
+import ThemeTransitionOverlay from '../components/ThemeTransitionOverlay';
+
 
 const Index = () => {
 
@@ -34,17 +36,12 @@ const blockImageOpenOnMobile = (e) => {
   return (
     <ThemeProvider>
       <div className="min-h-screen relative overflow-hidden">
+
         {/* Animated gradient background (brighter in light mode) */}
-        <div className="fixed inset-0 -z-10 pointer-events-none">
-  <div className="absolute inset-0 bg-gradient-to-br 
-                  from-gray-100 via-gray-50 to-gray-100 
-                  dark:from-black dark:via-neutral-900 dark:to-black">
-    <div className="absolute inset-0 opacity-40 dark:opacity-20">
-      <div className="absolute inset-0 bg-gradient-to-r 
-                      from-transparent via-white/20 to-transparent 
-                      blur-sm animate-pulse" />
-    </div>
-  </div>
+        <div className="fixed inset-0 -z-10 pointer-events-none transition-colors duration-500">
+  <div className="absolute inset-0 bg-gradient-to-b 
+    from-white via-gray-100 to-gray-300 
+    dark:from-black dark:via-black dark:to-black" />
 </div>
 
 

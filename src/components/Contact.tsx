@@ -154,24 +154,29 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
        {/* Kiri: Need Help */}
-      <div className="glass-card p-8 rounded-2xl flex flex-col justify-between h-full">
-        <h3 className="text-2xl font-bold text-white mb-3">Need Help?</h3>
-        <details className="mb-2 bg-white/10 rounded-lg p-3">
-          <summary className="cursor-pointer font-semibold text-white">What services do you offer?</summary>
-          <p className="text-white/80 mt-2">Web development, design, automation, etc.</p>
-        </details>
-        <details className="mb-2 bg-white/10 rounded-lg p-3">
-          <summary className="cursor-pointer font-semibold text-white">How can I contact you quickly?</summary>
-          <p className="text-white/80 mt-2">Just press the button below!</p>
-        </details>
-        <div className="w-full flex items-center justify-center mt-4">
-        <WhatsAppPearlButton
-          label="Press Me!"
-          fullWidth={false}
-        />
-        </div>
-      </div>
+       <div className="glass-card p-8 rounded-2xl flex flex-col justify-between h-full">
+  <h3 className="text-2xl font-bold text-white mb-3">My Resume</h3>
+  
+  <details className="mb-2 bg-white/10 rounded-lg p-3">
+    <summary className="cursor-pointer font-semibold text-white">What services do you provide?</summary>
+    <p className="text-white/80 mt-2">Custom web development, UI/UX design, and system integration.</p>
+  </details>
+  
+  <details className="mb-2 bg-white/10 rounded-lg p-3">
+    <summary className="cursor-pointer font-semibold text-white">How can you reach me?</summary>
+    <p className="text-white/80 mt-2">Simply click the button below to connect with me directly.</p>
+  </details>
+  
+  <div className="w-full flex items-center justify-center mt-4">
+    <WhatsAppPearlButton
+      label="Check Resume"
+      fullWidth={false}
+    />
+  </div>
+</div>
+
     </div>
 
     {/* Bawah sendiri: Let's Discuss! horizontal card */}

@@ -10,6 +10,7 @@ import LoadingScreen from "./components/LoadingScreen";
 import MaintenancePage from "./pages/MaintenancePage";
 import ProjectDetail from "./pages/ProjectDetail";
 import ScrollToTop from "./components/ScrollToTop";
+import Resume from "./components/Resume";
 
 
 const queryClient = new QueryClient();
@@ -90,6 +91,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/maintenance" element={<MaintenancePage />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/resume" element={<Resume />} />
             <Route path="/notfound" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

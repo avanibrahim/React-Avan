@@ -48,7 +48,7 @@ const About = () => {
       name: 'Vue.js',
       logo: (
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png" 
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png" 
           alt="Vue Logo" 
           className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
         />

@@ -6,7 +6,7 @@ const Hero = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const fullText = 'Avan Ibrahim, S.Kom';
+  const fullText = 'Avan Ibrahim';
   
 
   useEffect(() => {

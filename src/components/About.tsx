@@ -72,21 +72,18 @@ const About = () => {
       name: 'Universitas Ichsan Gorontalo Utara',
       level: '',
       logo: '/_optimized/image/logounisangorut.webp',
-      period: '2020 - 2024'
     },
     {
       id: 2,
       name: 'SMAN Muhamadiyah Kota Gorontalo',
       level: '',
       logo: '/_optimized/image/sma.webp',
-      period: '2017 - 2020'
     },
     {
       id: 3,
       name: 'SMPN 2 Kota Gorontalo',
       level: '',
       logo: '/_optimized/image/smp.webp',
-      period: '2014 - 2017'
     }
   ];
 
